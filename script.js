@@ -1,4 +1,4 @@
-//script.js
+//coole änderung juhu
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Das Skript wird ausgeführt!");

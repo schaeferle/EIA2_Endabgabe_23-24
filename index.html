@@ -1,9 +1,11 @@
+<!-- Erstellt von ELias Schäfer (268512) für den Kurs EIA2 -->
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>An informative Balloon Ride</title>
-    <meta name="description" content="An informative Balloon Ride in A-Frame">
+    <meta name="description" content="An informative Balloon Ride done with A-Frame">
     <script src="./script.js"></script>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/googlevr/webvr-polyfill/build/webvr-polyfill.min.js"></script>
@@ -12,37 +14,42 @@
   <body>
     <a-scene vr-mode-ui="enabled: true" cursor="rayOrigin: mouse">
   
-      <!-- Kamera --> 
+<!-- Kamera --> 
       <a-camera camera position="0 0.7 0.19" near="0.001" far="1000" look-controls wasd-controls>
       
-        <!-- Cursor (cool wow juhu) -->
-        <a-entity id="cursor" position="0 0 -0.5" geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.009" material="color: black; shader: flat"></a-entity>
+    <!-- Cursor (cool wow juhu) -->
+      <a-entity id="cursor" position="0 0 -0.5" geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.009" material="color: black; shader: flat"></a-entity>
       
-        <!-- Info-Texte -->
+    <!-- Info-Texte -->
+        <!-- Text Korb -->
         <a-entity id="textKorb" visible="false" font="kelsonsans">
           <a-text value="The basket serves as a platform for passengers and also provides space for equipment and accessories such as navigation systems, communication radios, or landing cushions."
            position="0 0 -0.01" color="black" align="center" width="0.014"></a-text>
           <a-plane position="0 0 -0.9" geometry="width: 1.5; height: 0.5" material="color: white; shader: flat"></a-plane>
         </a-entity>
 
+        <!-- Text Hülle -->  
         <a-entity id="textHuelle" visible="false">
           <a-text value="The balloon envelope is made of heat-resistant material and contains the heated air inside, creating the buoyancy necessary to lift the balloon into the air."
           position="0 0 -0.01" color="black" align="center" width="0.014"></a-text>
           <a-plane position="0 0 -0.9" geometry="width: 1.5; height: 0.5" material="color: white; shader: flat"></a-plane>
         </a-entity>
 
+        <!-- Text Seile -->  
         <a-entity id="textSeile" visible="false">
           <a-text value="The load lines secure the basket to the balloon's metal frame and support the weight of the passengers, ensuring stability and safety during the flight."
           position="0 0 -0.01" color="black" align="center" width="0.014"></a-text>
           <a-plane position="0 0 -0.9" geometry="width: 1.5; height: 0.5" material="color: white; shader: flat"></a-plane>
         </a-entity>
 
+        <!-- Text Metallgerüst -->  
         <a-entity id="textGeruest" visible="false">
           <a-text value="The metal frame stabilizes the balloon, supports the burner, forms the connection between the basket and the envelope, and reinforces the structure of the balloon during flight."
           position="0 0 -0.01" color="black" align="center" width="0.014"></a-text>
           <a-plane position="0 0 -0.9" geometry="width: 1.5; height: 0.5" material="color: white; shader: flat"></a-plane>
         </a-entity>
 
+        <!-- Text Brenner -->
         <a-entity id="textBrenner" visible="false">
           <a-text value="The burner burns propane to create a flame that heats the air inside the balloon. By adjusting the flame intensity, the pilot can control the altitude and direction of the balloon."
           position="0 0 -0.01" color="black" align="center" width="0.014"></a-text>
@@ -52,14 +59,14 @@
       </a-camera>
   
       <!-- 360°-Video -->
-      <a-videosphere src="Heissluftballons.mp4" rotation="0 270 0"></a-videosphere>
+      <a-videosphere src="./Texturen/Heissluftballons.mp4" rotation="0 270 0"></a-videosphere>
 
-  <!-- Modellierung -->
+  <!-- Modellierung des Ballons -->
 
       <!-- Hülle -->
       <a-entity id="huelle" clickable>
         <a-sphere position="0 11 0" radius="6 6 10" material="src: BallonTextur.jpeg"></a-sphere>
-        <a-cone position="0 5.5 0" radius-bottom="5" radius-top="0.8" height="4" rotation="0 0 180" material="src: BallonTextur.jpeg"></a-cone>
+        <a-cone position="0 5.5 0" radius-bottom="5" radius-top="0.8" height="4" rotation="0 0 180" material="src: ./Texturen/BallonTextur.jpeg"></a-cone>
         <a-cone position="0 4 0" radius-bottom="1.8" radius-top="0.9" height="1.3" rotation="0 0 180" material="color: #222"></a-cone>
       </a-entity>
 
@@ -67,19 +74,19 @@
       <a-entity id="brenner" clickable>
         <a-torus position="0 1.99 0" radius="0.3" radius-tubular="0.03" rotation="-90 0 0" material="color: #777"></a-torus>
         <a-torus position="0 2.69 0" radius="0.3" radius-tubular="0.03" rotation="-90 0 0" material="color: #777"></a-torus>
-        <a-cylinder position="0 2.3 0" height="0.7" radius="0.3" rotation="0 0 0" material="src: metall.jpg"></a-cylinder>
-        <a-cylinder position="0 2.19 0" height="2.9" radius="0.05" rotation="0 -45 90" material="src: metall.jpg"></a-cylinder>
-        <a-cylinder position="0 2.19 0" height="2.9" radius="0.05" rotation="0 45 90" material="src: metall.jpg"></a-cylinder>
+        <a-cylinder position="0 2.3 0" height="0.7" radius="0.3" rotation="0 0 0" material="src: ./Texturen/metall.jpg"></a-cylinder>
+        <a-cylinder position="0 2.19 0" height="2.9" radius="0.05" rotation="0 -45 90" material="src: ./Texturen/metall.jpg"></a-cylinder>
+        <a-cylinder position="0 2.19 0" height="2.9" radius="0.05" rotation="0 45 90" material="src: ./Texturen/metall.jpg"></a-cylinder>
       </a-entity>
 
       <!-- Korb -->
       <a-entity id="korb" clickable>
-        <a-box position="0 -2 0" width="2" height="0.2" depth="2" material="src: woven_rattan_generated.jpg"></a-box>
-        <a-box position="1 -1 0" width="0.2" height="2" depth="2" material="src: woven_rattan_generated.jpg"></a-box>
-        <a-box position="-1 -1 0" width="0.2" height="2" depth="2" material="src: woven_rattan_generated.jpg"></a-box>
-        <a-box position="0 -1 -1" width="2" height="2" depth="0.2" material="src: woven_rattan_generated.jpg"></a-box>
-        <a-box position="0 -1 1" width="2" height="2" depth="0.2" material="src: woven_rattan_generated.jpg"></a-box>
-      <!-- Simse -->
+        <a-box position="0 -2 0" width="2" height="0.2" depth="2" material="src: ./Texturen/woven_rattan_generated.jpg"></a-box>
+        <a-box position="1 -1 0" width="0.2" height="2" depth="2" material="src: ./Texturen/woven_rattan_generated.jpg"></a-box>
+        <a-box position="-1 -1 0" width="0.2" height="2" depth="2" material="src: ./Texturen/woven_rattan_generated.jpg"></a-box>
+        <a-box position="0 -1 -1" width="2" height="2" depth="0.2" material="src: ./Texturen/woven_rattan_generated.jpg"></a-box>
+        <a-box position="0 -1 1" width="2" height="2" depth="0.2" material="src: ./Texturen/woven_rattan_generated.jpg"></a-box>
+      <!-- Korb-Simse -->
         <a-box position="1 0 0" width="0.3" height="0.1" depth="2.2" material="color: #967241"></a-box>
         <a-box position="-1 0 0" width="0.3" height="0.1" depth="2.2" material="color: #967241"></a-box>
         <a-box position="0 0 -1" width="2.2" height="0.1" depth="0.3" material="color: #967241"></a-box>
@@ -88,18 +95,18 @@
 
       <!-- Metallgerüst Vertikal -->
       <a-entity id="geruest" clickable>
-        <a-cylinder position="-1 1 -1" height="2.4" radius="0.05" material="src: metall.jpg"></a-cylinder>
-        <a-cylinder position="1 1 1" height="2.4" radius="0.05" material="src: metall.jpg"></a-cylinder>
-        <a-cylinder position="-1 1 1" height="2.4" radius="0.05" material="src: metall.jpg"></a-cylinder>
-        <a-cylinder position="1 1 -1" height="2.4" radius="0.05" material="src: metall.jpg"></a-cylinder>
+        <a-cylinder position="-1 1 -1" height="2.4" radius="0.05" material="src: ./Texturen/metall.jpg"></a-cylinder>
+        <a-cylinder position="1 1 1" height="2.4" radius="0.05" material="src: ./Texturen/metall.jpg"></a-cylinder>
+        <a-cylinder position="-1 1 1" height="2.4" radius="0.05" material="src: ./Texturen/metall.jpg"></a-cylinder>
+        <a-cylinder position="1 1 -1" height="2.4" radius="0.05" material="src: ./Texturen/metall.jpg"></a-cylinder>
       <!-- Metallgerüst Horizontal -->
-        <a-cylinder position="0 2.19 -1" height="2" radius="0.05" rotation="0 0 90" material="src: metall.jpg"></a-cylinder>
-        <a-cylinder position="0 2.19 1" height="2" radius="0.05" rotation="0 0 90" material="src: metall.jpg"></a-cylinder>
-        <a-cylinder position="-1 2.19 0" height="2" radius="0.05" rotation="90 0 0" material="src: metall.jpg"></a-cylinder>
-        <a-cylinder position="1 2.19 0" height="2" radius="0.05" rotation="90 0 0" material="src: metall.jpg"></a-cylinder>
+        <a-cylinder position="0 2.19 -1" height="2" radius="0.05" rotation="0 0 90" material="src: ./Texturen/metall.jpg"></a-cylinder>
+        <a-cylinder position="0 2.19 1" height="2" radius="0.05" rotation="0 0 90" material="src: ./Texturen/metall.jpg"></a-cylinder>
+        <a-cylinder position="-1 2.19 0" height="2" radius="0.05" rotation="90 0 0" material="src: ./Texturen/metall.jpg"></a-cylinder>
+        <a-cylinder position="1 2.19 0" height="2" radius="0.05" rotation="90 0 0" material="src: ./Texturen/metall.jpg"></a-cylinder>
       </a-entity>
 
-      <!-- Seile -->
+      <!-- Lastleinen -->
       <a-entity id="seile" clickable>
         <a-cylinder position="-2 4.6 -2" height="5.7" radius="0.03" rotation="0 -45 30" material="color: #111111"></a-cylinder>
         <a-cylinder position="2 4.6 2" height="5.7" radius="0.03" rotation="0 135 30" material="color: #111111"></a-cylinder>
@@ -112,14 +119,16 @@
 
   <!-- Licht -->
 
-      <!-- Ambientlight -->
-      <a-light type="ambient" color="#c7eeff" intensity="0.9"></a-light>
+    <!-- Ambient Light -->
+    <a-light type="ambient" color="#c7eeff" intensity="0.9"></a-light>
 
-      <!-- Directional Light -->
-      <a-light id="directionalLight" type="directional" color="#fdffdb" intensity="2" position="0 4 -120" 
-      animation__position="property: position; to: -120 4 180; dur: 60000; easing: linear; loop: true">
+    <!-- Directional Light -->
+    <a-light id="directionalLight" type="directional" color="#fdffdb" intensity="1.5" position="0 4 -120" 
+     animation__position="property: position; to: -120 4 180; dur: 60000; easing: linear; loop: true">
     </a-light>
 
     </a-scene>
+
   </body>
+
 </html>
